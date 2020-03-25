@@ -1,0 +1,2 @@
+ 2018-08-26 15:41:55,071 - DEBUG - Start of program
+ 2018-08-26 15:41:55,132 - DEBUG - End of program
