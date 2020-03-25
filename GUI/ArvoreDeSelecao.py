@@ -11,6 +11,7 @@ import wx
 #import wx.xrc
 import wx.lib.agw.customtreectrl
 
+
 class ArvoreSelecaoElementos( wx.Panel ):
     def __init__(self, parent):
         wx.Panel.__init__ ( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.TAB_TRAVERSAL )
@@ -241,12 +242,17 @@ class ArvoreSelecaoElementos( wx.Panel ):
     def __del__( self ):
         pass
 
+
+
 class MyFrame(wx.Frame):
     def __init__(self, parent):
         wx.Frame.__init__(self, parent)
         self.PainelLaretal = ArvoreSelecaoElementos(self)
         
         self.Show()
+    
+    
+    
     
 if __name__ == "__main__":   
     app = wx.App(redirect=False)

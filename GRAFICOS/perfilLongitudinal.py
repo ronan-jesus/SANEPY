@@ -1992,7 +1992,6 @@ class TextOpenGL:
             
     def Desenha(self): 
         glPushAttrib(GL_CURRENT_BIT)
-        glLineWidth(2.0)        
         glColor3f(*self.color)
         x0, y0 = self.GetAnchorPos()        
         glTranslatef(x0, y0, 0)
@@ -2008,7 +2007,6 @@ class TextOpenGL:
                 glTranslatef(-self.GetWidth(palavra), -self.GetHeght(), 0)            
         else:
             raise Exception
-        glLineWidth(1.0)
         glPopAttrib()
         
             

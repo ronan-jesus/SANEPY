@@ -50,7 +50,7 @@ class PainelGerenciaPontos(wx.grid.Grid):
         pass
     
     def populaGrid(self):
-        dadosDXF = ImportaArquivoDXF("C:\PROGRAMAS PYTHON\SANEPY\App\ARQUIVOS/ficticea_esgoto.dxf")
+        dadosDXF = ImportaArquivoDXF("E:\\PROGRAMAS_PYTHON\\SANEPY\\ARQUIVOS\\ficticia_esgoto.dxf")
         pontos = dadosDXF.graficos["POINTS"]
         try:
             self.ClearGrid()

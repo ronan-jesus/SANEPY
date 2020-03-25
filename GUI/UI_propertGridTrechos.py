@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ###########################################################################
-## Python code generated with wxFormBuilder (version Oct 26 2018)
+## Python code generated with wxFormBuilder (version Aug 11 2018)
 ## http://www.wxformbuilder.org/
 ##
 ## PLEASE DO *NOT* EDIT THIS FILE!
@@ -71,8 +71,6 @@ class propGridTrechos ( wx.Frame ):
 		self.ptyGridItemAreaMolhadaFinal = self.m_propertyGridPage1.Append( pg.FloatProperty( u"Área Molhada Final", u"Área Molhada Final" ) )
 		self.ptyGridItemRaioHidraulicoInicio = self.m_propertyGridPage1.Append( pg.FloatProperty( u"Raio Hidráulico Início", u"Raio Hidráulico Início" ) )
 		self.ptyGridItemRaioHidraulicoFinal = self.m_propertyGridPage1.Append( pg.FloatProperty( u"Raio Hidráulico Final", u"Raio Hidráulico Final" ) )
-		self.ptyGridItemRelacao_H_D_Inicio = self.m_propertyGridPage1.Append( pg.FloatProperty( u"Relação h/D Inicio (%)", u"Relação h/D Inicio (%)" ) )
-		self.ptyGridItemRelacao_H_D_Final = self.m_propertyGridPage1.Append( pg.FloatProperty( u"Relação h/D Final (%)", u"Relação h/D Final (%)" ) )
 		self.ptyGridItemAlturaLaminaInicio = self.m_propertyGridPage1.Append( pg.FloatProperty( u"Altura Lâmina Água Inicio (m)", u"Altura Lâmina Água Inicio (m)" ) )
 		self.ptyGridItemAlturaLaminaFinal = self.m_propertyGridPage1.Append( pg.FloatProperty( u"Altura Lâmina Água Final (m)", u"Altura Lâmina Água Final (m)" ) )
 		self.ptyGridItemCotaLaminaMontante = self.m_propertyGridPage1.Append( pg.FloatProperty( u"Cota Lâmina Água Montante (m)", u"Cota Lâmina Água Montante (m)" ) )

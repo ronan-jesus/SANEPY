@@ -207,16 +207,6 @@ class JanelaPropTrechos(propGridTrechos):
         raioHidraulicoFinal = self.listaTrechos[0].RHfinal
         self.ptyGridItemRaioHidraulicoFinal.SetValue(raioHidraulicoFinal)
         
-        #Relacao h/D inicio de Plano
-        self.ptyGridItemRelacao_H_D_Inicio.Enable(False)
-        h_D_Inicio = self.listaTrechos[0].h_D_inicial
-        self.ptyGridItemRelacao_H_D_Inicio.SetValue(h_D_Inicio)
-        
-        #Relacao h/D final de Plano
-        self.ptyGridItemRelacao_H_D_Final.Enable(False)
-        h_D_Final = self.listaTrechos[0].h_D_final
-        self.ptyGridItemRelacao_H_D_Final.SetValue(h_D_Final)
-        
         #Altura Lamina de Agua para Inicio de PLano
         self.ptyGridItemAlturaLaminaInicio.Enable(False)
         alturaLaminaInicio = self.listaTrechos[0].Lamina_inicial

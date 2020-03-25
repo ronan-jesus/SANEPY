@@ -139,25 +139,24 @@ class App(Gui_principal, Model):
     def SetImagensdDoApp(self):
         """Define Todas as imagens da JanelaPrincipal do programa
         """
-        pass
-#        self.toolbar.SetToolNormalBitmap(self.salvar.GetId(), icon_salvar.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.abrir.GetId(), icon_abrir.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.gerenciaModE.GetId(), icon_mod_elasticidade.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.gerenciaSecoes_I.GetId(), icon_iniercia.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.mostraNormal.GetId(), icon_normal.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.mostraCortante.GetId(), icon_cortante.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.mostraFletor.GetId(), icon_momento.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.mostraTorcor.GetId(), icones_momento_torcor_TCC_32x32.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.pan.GetId(), icon_pan_32x32.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.zoomAll.GetId(), icon_expandAll_32x32.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.orbit.GetId(), icon_orbit_32x32.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.seta_calcular.GetId(), icone_seta_calcular_32x32.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.btn_vista_esquerda.GetId(), vista_esquerda.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.m_tool15.GetId(), icon_vista_direita.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.m_tool16.GetId(), icone_vista_frontal.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.m_tool17.GetId(), icone_vista_posterior.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.m_tool18.GetId(), icone_vista_superior.GetBitmap())
-#        self.toolbar.SetToolNormalBitmap(self.m_tool19.GetId(), icone_vista_baixo.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.salvar.GetId(), icon_salvar.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.abrir.GetId(), icon_abrir.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.gerenciaModE.GetId(), icon_mod_elasticidade.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.gerenciaSecoes_I.GetId(), icon_iniercia.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.mostraNormal.GetId(), icon_normal.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.mostraCortante.GetId(), icon_cortante.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.mostraFletor.GetId(), icon_momento.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.mostraTorcor.GetId(), icones_momento_torcor_TCC_32x32.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.pan.GetId(), icon_pan_32x32.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.zoomAll.GetId(), icon_expandAll_32x32.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.orbit.GetId(), icon_orbit_32x32.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.seta_calcular.GetId(), icone_seta_calcular_32x32.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.btn_vista_esquerda.GetId(), vista_esquerda.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.m_tool15.GetId(), icon_vista_direita.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.m_tool16.GetId(), icone_vista_frontal.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.m_tool17.GetId(), icone_vista_posterior.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.m_tool18.GetId(), icone_vista_superior.GetBitmap())
+        self.toolbar.SetToolNormalBitmap(self.m_tool19.GetId(), icone_vista_baixo.GetBitmap())
         
         #self.toolbar_lateral.auiToolbarSelecao.SetToolBitmap(1013, icon_seta_selecionar_32x32.GetBitmap())
         self.toolbar_lateral.auiToolbarSelecao.SetToolBitmap(1013, wx.Bitmap( u"IMGs/icone_setaSelecionar_sanepy.png", wx.BITMAP_TYPE_ANY ))
@@ -185,12 +184,12 @@ class App(Gui_principal, Model):
         if Id_Selecionado == 1000:
             if self.VerificaSeHaProjetoAberto():
                 if self.ShowModalMessage(event, "Deseja Salvar o Projeto Atual",
-                                                                      "Aviso"):                    
+                                      "Aviso"):
+                    #print ("PATH = %s" %self.path_arquivo)
                     salvaProjeto(self.Estrututura, event, self.path_arquivo)
                     self.CriaNovaEstrutura("PORTICO")
                 else:
                     self.CriaNovaEstrutura("PORTICO")
-                    
             else:
                 self.CriaNovaEstrutura("PORTICO")       
         
@@ -355,6 +354,8 @@ class App(Gui_principal, Model):
 
         elif Id_Selecionado == 1020:
             self.ExportaDados(event)
+        
+        
 
         elif Id_Selecionado == 1021:
             #ABRE UMA NOVA JANELA DE GERENCIAMENTO DE BARRAS
@@ -424,11 +425,9 @@ class App(Gui_principal, Model):
             self.CriaJanelaPerfil()
             
         elif Id_Selecionado == 1038:
+            print ("kkkkk")
             self.janelaDadosProjeto =  JanelaDadosDoProjeto(self)
             self.janelaDadosProjeto.Show()
-            
-        elif Id_Selecionado == 1039:
-            self.ExportDxf(event)
             
     def OnSliderBarra(self, evt):
         """
@@ -759,18 +758,18 @@ class App(Gui_principal, Model):
         Caso nao seja passado nenhuma FLAG, entao adota TRUE e habilita todos.
         """
         #DESABILITA OS BOTOES DA TOOLBAR
-#        self.toolbar.EnableTool(self.salvar.GetId(), Flag)
-#        self.toolbar.EnableTool(self.abrir.GetId(), Flag)
-#        self.toolbar.EnableTool(self.gerenciaModE.GetId(), Flag)
-#        self.toolbar.EnableTool(self.gerenciaSecoes_I.GetId(), Flag)
-#        self.toolbar.EnableTool(self.mostraNormal.GetId(), Flag)
-#        self.toolbar.EnableTool(self.mostraCortante.GetId(), Flag)
-#        self.toolbar.EnableTool(self.mostraFletor.GetId(), Flag)
-#        self.toolbar.EnableTool(self.mostraTorcor.GetId(), Flag)
-#        self.toolbar.EnableTool(self.pan.GetId(), Flag)
-#        self.toolbar.EnableTool(self.zoomAll.GetId(), Flag)
-#        self.toolbar.EnableTool(self.orbit.GetId(), False)
-#        self.toolbar.EnableTool(self.seta_calcular.GetId(), Flag)
+        self.toolbar.EnableTool(self.salvar.GetId(), Flag)
+        self.toolbar.EnableTool(self.abrir.GetId(), Flag)
+        self.toolbar.EnableTool(self.gerenciaModE.GetId(), Flag)
+        self.toolbar.EnableTool(self.gerenciaSecoes_I.GetId(), Flag)
+        self.toolbar.EnableTool(self.mostraNormal.GetId(), Flag)
+        self.toolbar.EnableTool(self.mostraCortante.GetId(), Flag)
+        self.toolbar.EnableTool(self.mostraFletor.GetId(), Flag)
+        self.toolbar.EnableTool(self.mostraTorcor.GetId(), Flag)
+        self.toolbar.EnableTool(self.pan.GetId(), Flag)
+        self.toolbar.EnableTool(self.zoomAll.GetId(), Flag)
+        self.toolbar.EnableTool(self.orbit.GetId(), False)
+        self.toolbar.EnableTool(self.seta_calcular.GetId(), Flag)
 
         if Flag == True:
             #HABILITA OS BOTOES DA LATERAL ESQUERDA
