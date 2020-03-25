@@ -121,7 +121,7 @@ class TrechoRede(object):
         self.TaxaInfiltracao = 0.001#T_infil        
         
         self.D = 0.150        
-        self.EspessuraTubo = 0.00      
+        self.EspessuraTubo = 0.01      
         self.coefManning = 0.013
         
         self.comprimentoAuto = True
@@ -294,7 +294,7 @@ class TrechoRede(object):
             n = self.coefManning
             D = self.D
             I = self.Iadotada
-            Q = self.QsaidaInicial/1000
+            Q = self.Qinicial/1000
             
             k = Q*n*pow(D,-8/3)*pow(I,-1/2)
             try:
@@ -302,7 +302,6 @@ class TrechoRede(object):
             except:
                 a = 2*pi
             
-            print ("---- a ---- %s" %a)
             Pm = (D/2)*a       
     
             return Pm
@@ -323,7 +322,7 @@ class TrechoRede(object):
             n = self.coefManning
             D = self.D
             I = self.Iadotada
-            Q = self.QsaidaFinal/1000
+            Q = self.Qfinal/1000
             
             k = Q*n*pow(D,-8/3)*pow(I,-1/2)     
             a = ((3*pi)/2)*sqrt(1-sqrt(1-sqrt(pi*k)))
@@ -348,7 +347,7 @@ class TrechoRede(object):
             n = self.coefManning
             D = self.D
             I = self.Iadotada
-            Q = self.QsaidaInicial/1000
+            Q = self.Qinicial/1000
             
             k = Q*n*pow(D,-8/3)*pow(I,-1/2)
             try:
@@ -376,7 +375,7 @@ class TrechoRede(object):
             n = self.coefManning
             D = self.D
             I = self.Iadotada
-            Q = self.QsaidaFinal/1000
+            Q = self.Qfinal/1000
             
             k = Q*n*pow(D,-8/3)*pow(I,-1/2)     
             a = ((3*pi)/2)*sqrt(1-sqrt(1-sqrt(pi*k)))
@@ -871,8 +870,6 @@ class TrechoRede(object):
             i = bisect.bisect_left(self.TABELA_Qh_QD, self.Q_Q0_inicial)
             return float(self.TABELA_INDICES[i][0])                
         except Exception as e:
-            print ("Erro no trecho %s" %self.numero)
-            print ("Nao foi possivel achar na tabela 'Qh/QD'")
             try_Except(e)
             
     @h_D_inicial.setter
@@ -902,15 +899,13 @@ class TrechoRede(object):
         try:
             return (self.h_D_inicial*self.D)
         except Exception as e:
-            print ("Erro no trecho %s" %self.numero)
-            print ("Nao foi possivel retornar o 'h/D inicial'")
             try_Except(e)
             
     @Lamina_inicial.setter
     def Lamina_inicial(self, Lamina_inicial):
         try:
             self.Lamina_inicial = Lamina_inicial
-        except Exception as e:            
+        except Exception as e:
             try_Except(e)
             
     @property
@@ -925,8 +920,6 @@ class TrechoRede(object):
         try:
             self.Lamina_inicial = Lamina_inicial
         except Exception as e:
-            print ("Erro no trecho %s" %self.numero)
-            print ("Nao foi possivel retornar a 'Lamina_inicial'")
             try_Except(e)
             
     @property

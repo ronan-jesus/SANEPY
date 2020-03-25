@@ -63,9 +63,6 @@ def GetAnguloTextosTubos(Cx, Cy):
         return float(degrees(acos(-Cx)))
     elif (Cx >0 and Cy<0):
         return float(degrees(acos(-Cx)))+180
-
-def GetPath():
-    pass
     
 if __name__ == "__main__":
     print (truncaNumero(1.1234, 10))

@@ -2,7 +2,6 @@
 import os, sys
 import xlwt
 import wx
-from AUXILIARES.util import truncaNumero
 
 def resource_path(relative):
     return os.path.join(os.environ.get("_MEIPASS2",os.path.abspath(".")),relative)
@@ -42,36 +41,7 @@ class ExportaEstruturaExcel(object):
         ws.set_panes_frozen(True)
         ws.set_horz_split_pos(4) 
         ws.set_vert_split_pos(4)
-        
-        font1_salmao = xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
-                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color rosa_salmao')
     
-        font2_salmao = xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
-                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right medium;pattern: pattern solid, fore_color rosa_salmao')
-        
-        font3_salmao = xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
-                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left medium, right dotted;pattern: pattern solid, fore_color rosa_salmao')
-        
-        font1_azul = xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
-                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color azul_escuro')
-        
-        font3_azul = xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
-                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left medium, right dotted;pattern: pattern solid, fore_color azul_escuro')
-        
-        font2_azul = xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
-                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right medium;pattern: pattern solid, fore_color azul_escuro')
-        
-        font3_verde = xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
-                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left medium, right dotted;pattern: pattern solid, fore_color verde_cinza')
-        
-        font1_verde = xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
-                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza')
-        
-        font2_verde = xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
-                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right medium;pattern: pattern solid, fore_color verde_cinza')
-        
-        
-        
         ws.write_merge(0,0,0,3, u'', xlwt.easyxf('align: horiz center,  vert centre; font: bold on, color black;\
                                 borders: top_color black, bottom_color black,\
                                 right_color black, left_color black, left medium,\
@@ -320,97 +290,143 @@ class ExportaEstruturaExcel(object):
         ####### FIM DESCRICAO DAS FORCAS DE ENGASTAMENTO PERFEITO GLOBAL DA BARRA #################
         BARRAS = self.Estrutura.LISTA_TUBULACOES
         for i in range(4, len(self.Estrutura.LISTA_TUBULACOES)+4):
-            ws.write(i,0, str(BARRAS[i-4].nomeTrecho), font1_salmao)
-            
-            ws.write(i,1, str(BARRAS[i-4].PV1.nomePV+str(BARRAS[i-4].PV1.numero)), font1_salmao)
+            ws.write(i,0, str(BARRAS[i-4].nomeTrecho), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color rosa_salmao'))
+             
+            ws.write(i,1, str(BARRAS[i-4].PV1.nomePV+str(BARRAS[i-4].PV1.numero)), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color rosa_salmao'))
                                              
-            ws.write(i,2, str(BARRAS[i-4].PV2.nomePV+str(BARRAS[i-4].PV2.numero)), font1_salmao)
+            ws.write(i,2, str(BARRAS[i-4].PV2.nomePV+str(BARRAS[i-4].PV2.numero)), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color rosa_salmao'))
                                              
-            ws.write(i,3, str(round(BARRAS[i-4].L, 2)).replace(".",","), font2_salmao)
-
-            ws.write(i,4, str(round(BARRAS[i-4].QsaidaInicial, 2)).replace(".",","), font3_azul)
-                                             
-            ws.write(i,5, str(round(BARRAS[i-4].QsaidaFinal, 2)).replace(".",","), font2_azul)
-                                             
-            ws.write(i,6, str(round(BARRAS[i-4].PV1.CotaTerreno, 3)).replace(".",","), font3_salmao)
-                                             
-            ws.write(i,7, str(round(BARRAS[i-4].PV2.CotaTerreno, 3)).replace(".",","), font2_salmao)
-                                             
-            ws.write(i,8, str(round(BARRAS[i-4].Iminima/100, 7)).replace(".",","), font3_verde)
-                                             
-            ws.write(i,9, str(round(BARRAS[i-4].Iterreno/100, 7)).replace(".",","), font1_verde)
-                                             
-            ws.write(i,10, str(round(BARRAS[i-4].Iadotada, 7)).replace(".",","), font1_verde)
-                                             
-            ws.write(i,11, round((BARRAS[i-4].Iadotada - max(BARRAS[i-4].Iminima/100, BARRAS[i-4].Iterreno/100)),4), font1_verde)
-            
-            ws.write(i,12, str(round(BARRAS[i-4].Desnivel, 2)).replace(".",","), font2_verde)
-                                             
-            ws.write(i,13, str(int(BARRAS[i-4].D*1000)), font3_salmao)
-                                             
-            ws.write(i,14, str(BARRAS[i-4].EspessuraTubo).replace(".",","), font1_salmao)
-                                             
-            ws.write(i,15, "OK", font2_salmao)
-                                             
-            ws.write(i,16, str(BARRAS[i-4].V0).replace(".",","), font3_verde)
-                                             
-            ws.write(i,17, str(BARRAS[i-4].Q0).replace(".",","), font1_verde)
-                                             
-            ws.write(i,18, str(BARRAS[i-4].Q_Q0_inicial).replace(".",","), font1_verde)
-                                             
-            ws.write(i,19, str(BARRAS[i-4].Q_Q0_final).replace(".",","), font1_verde)
-                                             
-            ws.write(i,20, str(BARRAS[i-4].V_V0_inicial).replace(".",","), font1_verde)
-                                             
-            ws.write(i,21, str(BARRAS[i-4].V_V0_final).replace(".",","), font1_verde)
-                                             
-            ws.write(i,22, str(BARRAS[i-4].Vi).replace(".",","), font1_verde)
-                                             
-            ws.write(i,23, str(BARRAS[i-4].Vf).replace(".",","), font2_verde)
-                                             
-            ws.write(i,24, str(BARRAS[i-4].Rh_D_inicial).replace(".",","), font3_verde)
-                                             
-            ws.write(i,25, str(BARRAS[i-4].Rh_D_final).replace(".",","), font1_verde)
-                                             
-            ws.write(i,26, str(BARRAS[i-4].Rhidraulico_inicial).replace(".",","), font1_verde)
-            
-            ws.write(i,27, str(BARRAS[i-4].Rhidraulico_final).replace(".",","), font1_verde)
-                                             
-            ws.write(i,28, str(BARRAS[i-4].Vcritica_inicial).replace(".",","), font1_verde)
-                                             
-            ws.write(i,29, str(BARRAS[i-4].Vcritica_final).replace(".",","), font1_verde)
-                                             
-            ws.write(i,30, str(BARRAS[i-4].StatusVcritica_inicial), font1_verde)
-                                             
-            ws.write(i,31, str(BARRAS[i-4].StatusVcritica_final), font2_verde)
-                                             
-            ws.write(i,32, str(BARRAS[i-4].CGII).replace(".",","), font3_salmao)
-                                             
-            ws.write(i,33, str(BARRAS[i-4].CGIF).replace(".",","), font1_salmao)
-                                             
-            ws.write(i,34, str(BARRAS[i-4].PV1.CotaTerreno - BARRAS[i-4].CGII).replace(".",","), font1_salmao)
-                                             
-            ws.write(i,35, str(BARRAS[i-4].PV2.CotaTerreno - BARRAS[i-4].CGIF).replace(".",","), font1_salmao)
-                                             
-            ws.write(i,36, str(BARRAS[i-4].alturaFinalTrecho).replace(".",","), font1_salmao)
-                                             
-            ws.write(i,37, str(BARRAS[i-4].coberturaInicioTrecho).replace(".",","), font1_salmao)
-                                             
-            ws.write(i,38, "-", font2_salmao)
-                                             
-            ws.write(i,39, str(BARRAS[i-4].h_D_inicial).replace(".",","), font3_azul)
-                                             
-            ws.write(i,40, str(BARRAS[i-4].h_D_final).replace(".",","), font1_azul)
-                                             
-            ws.write(i,41, str(BARRAS[i-4].Lamina_inicial).replace(".",","), font1_azul)
-                                             
-            ws.write(i,42, str(BARRAS[i-4].Lamina_final).replace(".",","), font1_azul)
-                                             
-            ws.write(i,43, str(BARRAS[i-4].CotaLaminaMontante).replace(".",","), font1_azul)
-                                             
-            ws.write(i,44, str(BARRAS[i-4].CotaLaminaJusante).replace(".",","), font1_azul)
+            ws.write(i,3, str(round(BARRAS[i-4].L, 2)).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right medium;pattern: pattern solid, fore_color rosa_salmao'))
     
-            ws.write(i,45, str(BARRAS[i-4].Remanso).replace(".",","), font2_azul)
+            ws.write(i,4, str(round(BARRAS[i-4].QsaidaInicial, 2)).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left medium, right dotted;pattern: pattern solid, fore_color azul_escuro'))
+                                             
+            ws.write(i,5, str(round(BARRAS[i-4].QsaidaFinal, 2)).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right medium;pattern: pattern solid, fore_color azul_escuro'))
+                                             
+            ws.write(i,6, str(round(BARRAS[i-4].PV1.CotaTerreno, 3)).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left medium, right dotted;pattern: pattern solid, fore_color rosa_salmao'))
+                                             
+            ws.write(i,7, str(round(BARRAS[i-4].PV2.CotaTerreno, 3)).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right medium;pattern: pattern solid, fore_color rosa_salmao'))
+                                             
+            ws.write(i,8, str(round(BARRAS[i-4].Iminima/100, 7)).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left medium, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,9, str(round(BARRAS[i-4].Iterreno/100, 7)).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,10, str(round(BARRAS[i-4].Iadotada, 7)).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,11, round((BARRAS[i-4].Iadotada - max(BARRAS[i-4].Iminima/100, BARRAS[i-4].Iterreno/100)),4), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+            
+            ws.write(i,12, str(round(BARRAS[i-4].Desnivel, 2)).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right medium;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,13, str(int(BARRAS[i-4].D*1000)), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left medium, right dotted;pattern: pattern solid, fore_color rosa_salmao'))
+                                             
+            ws.write(i,14, str(BARRAS[i-4].EspessuraTubo).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color rosa_salmao'))
+                                             
+            ws.write(i,15, "OK", xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right medium;pattern: pattern solid, fore_color rosa_salmao'))
+                                             
+            ws.write(i,16, str(BARRAS[i-4].V0).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left medium, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,17, str(BARRAS[i-4].Q0).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,18, str(BARRAS[i-4].Q_Q0_inicial).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,19, str(BARRAS[i-4].Q_Q0_final).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,20, str(BARRAS[i-4].V_V0_inicial).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,21, str(BARRAS[i-4].V_V0_final).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,22, str(BARRAS[i-4].Vinicial).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,23, str(BARRAS[i-4].Vfinal).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right medium;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,24, str(BARRAS[i-4].Rh_D_inicial).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left medium, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,25, str(BARRAS[i-4].Rh_D_final).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,26, str(BARRAS[i-4].Rhidraulico_inicial).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+            
+            ws.write(i,27, str(BARRAS[i-4].Rhidraulico_final).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,28, str(BARRAS[i-4].Vcritica_inicial).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,29, str(BARRAS[i-4].Vcritica_final).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,30, str(BARRAS[i-4].StatusVcritica_inicial), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,31, str(BARRAS[i-4].StatusVcritica_final), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right medium;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,32, str(BARRAS[i-4].CGII).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left medium, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,33, str(BARRAS[i-4].CGIF).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,34, str(BARRAS[i-4].PV1.CotaTerreno - BARRAS[i-4].CGII).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,35, str(BARRAS[i-4].PV2.CotaTerreno - BARRAS[i-4].CGIF).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,36, str(BARRAS[i-4].alturaFinalTrecho).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,37, str(BARRAS[i-4].coberturaInicioTrecho).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,38, "-", xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right medium;pattern: pattern solid, fore_color verde_cinza'))
+                                             
+            ws.write(i,39, str(BARRAS[i-4].h_D_inicial).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left medium, right dotted;pattern: pattern solid, fore_color azul_escuro'))
+                                             
+            ws.write(i,40, str(BARRAS[i-4].h_D_final).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color azul_escuro'))
+                                             
+            ws.write(i,41, str(BARRAS[i-4].Lamina_inicial).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color azul_escuro'))
+                                             
+            ws.write(i,42, str(BARRAS[i-4].Lamina_final).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color azul_escuro'))
+                                             
+            ws.write(i,43, str(BARRAS[i-4].CotaLaminaMontante).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color azul_escuro'))
+                                             
+            ws.write(i,44, str(BARRAS[i-4].CotaLaminaJusante).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right dotted;pattern: pattern solid, fore_color azul_escuro'))
+    
+            ws.write(i,45, str(BARRAS[i-4].Remanso).replace(".",","), xlwt.easyxf('align: horiz center,  vert centre; font: bold off, color black;\
+                                             borders: right_color black, bottom_color black, top dotted, bottom dotted, left dotted, right medium;pattern: pattern solid, fore_color azul_escuro'))
                                              
     
     def SalvaEstrutura(self):    

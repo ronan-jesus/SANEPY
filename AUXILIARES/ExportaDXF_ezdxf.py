@@ -7,42 +7,18 @@ Created on Sun Dec 10 16:00:27 2017
 import os
 import wx
 import ezdxf
-from ezdxf.algebra import UCS
+#from ezdxf.algebra import UCS
+from ezdxf.math import UCS
 import numpy as np
 
 class DXFExport(object):
-    def __init__(self, parent, event):
+    def __init__(self, parent):
         self.parent = parent
-        self.event = event
-        self.path = ""
         self.rede = parent.Estrututura
         self.dxf = ezdxf.new('R2010')
         self.mdspace = self.dxf.modelspace()
         
-        self.SalvaArquivo()
-     
-    def SalvaArquivo(self):    
-        """Funcao responsavel por abrir a janela de salvamento, escolhe o nome e local
-           do arquivo, apos faz o salvamento.
-        """
-        dlg = wx.FileDialog(self.event.GetEventObject().GetParent(), "Save project as...", os.getcwd(), "", "*.dxf", wx.FD_SAVE|wx.FD_OVERWRITE_PROMPT)
-        result = dlg.ShowModal()
-        path = dlg.GetPath()
-        dlg.Destroy()
-
-        if result == wx.ID_OK:  #Botao salvar foi pressionado            
-            # Abra o arquivo (leitura)
-            try:
-                self.path = path
-                self.CreateDrawing()              
-            except Exception as e:                
-                print (e)                
-            finally:
-                pass
-            return True
-
-        elif result == wx.ID_CANCEL:    #Qualque um dos botoes cancelar ou fechar janela
-            return False
+        self.CreateDrawing()
         
     def CreateDrawing(self):
         for trecho in self.rede.LISTA_TUBULACOES:
@@ -83,7 +59,7 @@ class DXFExport(object):
             
         self.DrenhaPerfils()
         
-        self.dxf.saveas(self.path)
+        self.dxf.saveas('line.dxf')
     
     def GetRealAngleText(self, trecho):
         anguloTexto = trecho.GetAngleDirection()
