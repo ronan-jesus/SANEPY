@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<wxFormBuilder_Project>
+    <FileVersion major="1" minor="15" />
+    <object class="Project" expanded="1">
+        <property name="class_decoration"></property>
+        <property name="code_generation">Python</property>
+        <property name="disconnect_events">1</property>
+        <property name="disconnect_mode">source_name</property>
+        <property name="disconnect_php_events">0</property>
+        <property name="disconnect_python_events">0</property>
+        <property name="embedded_files_path">res</property>
+        <property name="encoding">UTF-8</property>
+        <property name="event_generation">connect</property>
+        <property name="file">gui_principal</property>
+        <property name="first_id">1000</property>
+        <property name="help_provider">none</property>
+        <property name="indent_with_spaces"></property>
+        <property name="internationalize">0</property>
+        <property name="name">MyProject1</property>
+        <property name="namespace"></property>
+        <property name="path">C:\PROGRAMAS PYTHON\SANEPY\App\WXFORMBUILDER\wxFormaBuilder_antiga</property>
+        <property name="precompiled_header"></property>
+        <property name="relative_path">1</property>
+        <property name="skip_lua_events">1</property>
+        <property name="skip_php_events">1</property>
+        <property name="skip_python_events">1</property>
+        <property name="ui_table">UI</property>
+        <property name="use_enum">0</property>
+        <property name="use_microsoft_bom">0</property>
+        <object class="Frame" expanded="1">
+            <property name="aui_managed">0</property>
+            <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
+            <property name="bg"></property>
+            <property name="center">wxBOTH</property>
+            <property name="context_help"></property>
+            <property name="context_menu">1</property>
+            <property name="enabled">1</property>
+            <property name="event_handler">impl_virtual</property>
+            <property name="extra_style"></property>
+            <property name="fg"></property>
+            <property name="font"></property>
+            <property name="hidden">0</property>
+            <property name="id">wxID_ANY</property>
+            <property name="maximum_size"></property>
+            <property name="minimum_size"></property>
+            <property name="name">Gui_principal</property>
+            <property name="pos"></property>
+            <property name="size">1025,442</property>
+            <property name="style">wxDEFAULT_FRAME_STYLE</property>
+            <property name="subclass">; ; Not forward_declare</property>
+            <property name="title"></property>
+            <property name="tooltip"></property>
+            <property name="window_extra_style"></property>
+            <property name="window_name"></property>
+            <property name="window_style">wxTAB_TRAVERSAL</property>
+            <property name="xrc_skip_sizer">1</property>
+            <event name="OnClose">OnClose</event>
+            <object class="wxMenuBar" expanded="1">
+                <property name="bg"></property>
+                <property name="context_help"></property>
+                <property name="context_menu">1</property>
+                <property name="enabled">1</property>
+                <property name="fg"></property>
+                <property name="font"></property>
+                <property name="hidden">0</property>
+                <property name="id">wxID_ANY</property>
+                <property name="label">MyMenuBar</property>
+                <property name="maximum_size"></property>
+                <property name="minimum_size"></property>
+                <property name="name">m_menubar2</property>
+                <property name="permission">protected</property>
+                <property name="pos"></property>
+                <property name="size"></property>
+                <property name="style"></property>
+                <property name="subclass"></property>
+                <property name="tooltip"></property>
+                <property name="window_extra_style"></property>
+                <property name="window_name"></property>
+                <property name="window_style"></property>
+                <object class="wxMenu" expanded="0">
+                    <property name="label">Arquivo</property>
+                    <property name="name">arquivo</property>
+                    <property name="permission">protected</property>
+                    <object class="wxMenuItem" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="checked">0</property>
+                        <property name="enabled">1</property>
+                        <property name="help"></property>
+                        <property name="id">ID_MENU_ITEM_PORTICO3D</property>
+                        <property name="kind">wxITEM_NORMAL</property>
+                        <property name="label">Novo</property>
+                        <property name="name">menu_abrir_novo</property>
+                        <property name="permission">none</property>
+                        <property name="shortcut"></property>
+                        <property name="unchecked_bitmap"></property>
+                        <event name="OnMenuSelection">MenuItemselect</event>
+                    </object>
+                    <object class="wxMenuItem" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="checked">0</property>
+                        <property name="enabled">1</property>
+                        <property name="help"></property>
+                        <property name="id">ID_MENU_ITEM_SALVAR</property>
+                        <property name="kind">wxITEM_NORMAL</property>
+                        <property name="label">Salvar Arquivo</property>
+                        <property name="name">item_salvar</property>
+                        <property name="permission">none</property>
+                        <property name="shortcut"></property>
+                        <property name="unchecked_bitmap"></property>
+                        <event name="OnMenuSelection">MenuItemselect</event>
+                    </object>
+                    <object class="wxMenuItem" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="checked">0</property>
+                        <property name="enabled">1</property>
+                        <property name="help"></property>
+                        <property name="id">ID_MENU_ITEM_ABRIR</property>
+                        <property name="kind">wxITEM_NORMAL</property>
+                        <property name="label">Abrir Arquivo</property>
+                        <property name="name">item_abrir</property>
+                        <property name="permission">none</property>
+                        <property name="shortcut"></property>
+                        <property name="unchecked_bitmap"></property>
+                        <event name="OnMenuSelection">MenuItemselect</event>
+                    </object>
+                    <object class="wxMenuItem" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="checked">0</property>
+                        <property name="enabled">1</property>
+                        <property name="help"></property>
+                        <property name="id">ID_MENU_ITEM_FECHAR</property>
+                        <property name="kind">wxITEM_NORMAL</property>
+                        <property name="label">Fechar</property>
+                        <property name="name">item_fechar</property>
+                        <property name="permission">none</property>
+                        <property name="shortcut"></property>
+                        <property name="unchecked_bitmap"></property>
+                        <event name="OnMenuSelection">MenuItemselect</event>
+                    </object>
+                </object>
+                <object class="wxMenu" expanded="1">
+                    <property name="label">Projeto</property>
+                    <property name="name">menu_projeto</property>
+                    <property name="permission">protected</property>
+                    <object class="wxMenuItem" expanded="1">
+                        <property name="bitmap"></property>
+                        <property name="checked">0</property>
+                        <property name="enabled">1</property>
+                        <property name="help"></property>
+                        <property name="id">ID_MENU_PROJETO_OPCOES_DO_PROJETO</property>
+                        <property name="kind">wxITEM_NORMAL</property>
+                        <property name="label">Opções de Projeto</property>
+                        <property name="name">item_opcoes_opcoesProjeto</property>
+                        <property name="permission">none</property>
+                        <property name="shortcut"></property>
+                        <property name="unchecked_bitmap"></property>
+                        <event name="OnMenuSelection">MenuElementosSelected</event>
+                    </object>
+                    <object class="wxMenuItem" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="checked">0</property>
+                        <property name="enabled">1</property>
+                        <property name="help"></property>
+                        <property name="id">ID_MENU_OPCOES_HABILITAR_ELEMENTOS</property>
+                        <property name="kind">wxITEM_NORMAL</property>
+                        <property name="label">Habilitar/Desabilitar Elementos</property>
+                        <property name="name">item_opcoes_habilitar_visualizacao_elementos</property>
+                        <property name="permission">none</property>
+                        <property name="shortcut"></property>
+                        <property name="unchecked_bitmap"></property>
+                        <event name="OnMenuSelection">MenuElementosSelected</event>
+                    </object>
+                    <object class="wxMenuItem" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="checked">0</property>
+                        <property name="enabled">1</property>
+                        <property name="help"></property>
+                        <property name="id">ID_MENU_OPCOES_UNIDADES</property>
+                        <property name="kind">wxITEM_NORMAL</property>
+                        <property name="label">Unidades e Formatos</property>
+                        <property name="name">item_opcoes_unidades</property>
+                        <property name="permission">none</property>
+                        <property name="shortcut"></property>
+                        <property name="unchecked_bitmap"></property>
+                        <event name="OnMenuSelection">MenuElementosSelected</event>
+                    </object>
+                </object>
+                <object class="wxMenu" expanded="1">
+                    <property name="label">Visualizar</property>
+                    <property name="name">visualizar</property>
+                    <property name="permission">protected</property>
+                    <object class="submenu" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="label">Paineis</property>
+                        <property name="name">paineis</property>
+                        <property name="permission">protected</property>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">1</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_MOSTRAR_PAINEL_PONTOSCOTAS</property>
+                            <property name="kind">wxITEM_CHECK</property>
+                            <property name="label">Pontos de Cotas</property>
+                            <property name="name">mostrar_painel_pontosCotas</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">OnCheckselect</event>
+                        </object>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">1</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_MOSTRAR_PAINELELEMENTOS</property>
+                            <property name="kind">wxITEM_CHECK</property>
+                            <property name="label">Elementos</property>
+                            <property name="name">mostrar_painel_elementos</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">OnCheckselect</event>
+                        </object>
+                    </object>
+                    <object class="submenu" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="label">Reações</property>
+                        <property name="name">reacoes</property>
+                        <property name="permission">protected</property>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_MOSTRAR_REACOESDEAPOIOS</property>
+                            <property name="kind">wxITEM_CHECK</property>
+                            <property name="label">Reações nos Apoios</property>
+                            <property name="name">mostrar_reacoes_apoios</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">OnCheckselect</event>
+                        </object>
+                    </object>
+                    <object class="submenu" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="label">Solicitações</property>
+                        <property name="name">solicitacoes</property>
+                        <property name="permission">protected</property>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_MOSTRAR_ESFORCOSNORMAIS</property>
+                            <property name="kind">wxITEM_CHECK</property>
+                            <property name="label">Esforço Normal</property>
+                            <property name="name">normal</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">OnCheckselect</event>
+                        </object>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_MOSTRAR_ESFORCOSCORTANTEYY</property>
+                            <property name="kind">wxITEM_CHECK</property>
+                            <property name="label">Esforço Cortante em Y</property>
+                            <property name="name">cortante_y</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">OnCheckselect</event>
+                        </object>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_MOSTRAR_ESFORCOSCORTANTEZZ</property>
+                            <property name="kind">wxITEM_CHECK</property>
+                            <property name="label">Esforço Cortante em Z</property>
+                            <property name="name">cortante_z</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">OnCheckselect</event>
+                        </object>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_MOSTRAR_MOMENTOSFLETORESY</property>
+                            <property name="kind">wxITEM_CHECK</property>
+                            <property name="label">Momentos Fletores em Y</property>
+                            <property name="name">momento_y</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">OnCheckselect</event>
+                        </object>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_MOSTRAR_MOMENTOSFLETORESZ</property>
+                            <property name="kind">wxITEM_CHECK</property>
+                            <property name="label">Momentos Fletores em Z</property>
+                            <property name="name">momento_z</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">OnCheckselect</event>
+                        </object>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_MOSTRAR_MOMENTOSTORCORES</property>
+                            <property name="kind">wxITEM_CHECK</property>
+                            <property name="label">Momentos Torçores</property>
+                            <property name="name">torcor</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">OnCheckselect</event>
+                        </object>
+                    </object>
+                    <object class="submenu" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="label">Deformações</property>
+                        <property name="name">deformacoes</property>
+                        <property name="permission">protected</property>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_MOSTRAR_ESTRUTURA_DEFORMADA</property>
+                            <property name="kind">wxITEM_CHECK</property>
+                            <property name="label">Estrutura Deformada</property>
+                            <property name="name">estrutura_deformada</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">OnCheckselect</event>
+                        </object>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_MOSTRAR_ESTRUTURA_INDEFORMADA</property>
+                            <property name="kind">wxITEM_CHECK</property>
+                            <property name="label">Estrutura Indeformada</property>
+                            <property name="name">estrutura_indeformada</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">OnCheckselect</event>
+                        </object>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_MOSTRAR_TEXTO_DESLOCAMENTOS</property>
+                            <property name="kind">wxITEM_CHECK</property>
+                            <property name="label">Deslocamentos Nodais</property>
+                            <property name="name">deslocamentos_nodais</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">OnCheckselect</event>
+                        </object>
+                    </object>
+                </object>
+                <object class="wxMenu" expanded="0">
+                    <property name="label">Elementos</property>
+                    <property name="name">menu_elementos</property>
+                    <property name="permission">protected</property>
+                    <object class="submenu" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="label">Nós</property>
+                        <property name="name">submenu_nos</property>
+                        <property name="permission">protected</property>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_EDITAR_NOS </property>
+                            <property name="kind">wxITEM_NORMAL</property>
+                            <property name="label">Atribuir Forças</property>
+                            <property name="name">item_nos_atribuir_forcas</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">MenuElementosSelected</event>
+                        </object>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_ELEMENTOS_NOS_RESTRICOES</property>
+                            <property name="kind">wxITEM_NORMAL</property>
+                            <property name="label">Definir Restrições</property>
+                            <property name="name">item_nos_atribuir_retricoes</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">MenuElementosSelected</event>
+                        </object>
+                    </object>
+                    <object class="submenu" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="label">Barras</property>
+                        <property name="name">submenu_barras</property>
+                        <property name="permission">protected</property>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_MATERIAL_BARRAS</property>
+                            <property name="kind">wxITEM_NORMAL</property>
+                            <property name="label">Atribuir Material</property>
+                            <property name="name">item_barras_atribuir_material</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">MenuElementosSelected</event>
+                        </object>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_SECOES_BARRAS</property>
+                            <property name="kind">wxITEM_NORMAL</property>
+                            <property name="label">Atribuir Seção</property>
+                            <property name="name">item_barras_atribuir_secao</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">MenuElementosSelected</event>
+                        </object>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_CARGA_Y_BARRAS</property>
+                            <property name="kind">wxITEM_NORMAL</property>
+                            <property name="label">Atribuir Carregamento Eixo Y</property>
+                            <property name="name">item_barras_atribuir_carga_y</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">MenuElementosSelected</event>
+                        </object>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_CARGA_Z_BARRAS</property>
+                            <property name="kind">wxITEM_NORMAL</property>
+                            <property name="label">Atribuir Carregamento Eixo Z</property>
+                            <property name="name">item_barras_atribuir_carga_z</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">MenuElementosSelected</event>
+                        </object>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_INCLINACAO_BARRAS</property>
+                            <property name="kind">wxITEM_NORMAL</property>
+                            <property name="label">Atribuir Inclinação da Seção</property>
+                            <property name="name">item_barras_atribuir_inclinacao_secao</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">MenuElementosSelected</event>
+                        </object>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_INVERTER_SENTIDO_BARRAS</property>
+                            <property name="kind">wxITEM_NORMAL</property>
+                            <property name="label">Inverter Sentido</property>
+                            <property name="name">item_barras_inverter_sentido_barra</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">MenuElementosSelected</event>
+                        </object>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_ROTULAR_BARRAS</property>
+                            <property name="kind">wxITEM_NORMAL</property>
+                            <property name="label">Rotular  Conexões</property>
+                            <property name="name">item_barras_rotular_barra</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">MenuElementosSelected</event>
+                        </object>
+                    </object>
+                    <object class="submenu" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="label">Perfis</property>
+                        <property name="name">submenu_perfis</property>
+                        <property name="permission">protected</property>
+                        <object class="wxMenuItem" expanded="0">
+                            <property name="bitmap"></property>
+                            <property name="checked">0</property>
+                            <property name="enabled">1</property>
+                            <property name="help"></property>
+                            <property name="id">ID_MENU_ITEM_CRIAR_PERFIL</property>
+                            <property name="kind">wxITEM_NORMAL</property>
+                            <property name="label">Criar Perfil</property>
+                            <property name="name">item_perfis_criar_perfil</property>
+                            <property name="permission">none</property>
+                            <property name="shortcut"></property>
+                            <property name="unchecked_bitmap"></property>
+                            <event name="OnMenuSelection">MenuElementosSelected</event>
+                        </object>
+                    </object>
+                </object>
+                <object class="wxMenu" expanded="0">
+                    <property name="label">Ferramentas</property>
+                    <property name="name">menu_elementos_exportar</property>
+                    <property name="permission">protected</property>
+                    <object class="wxMenuItem" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="checked">0</property>
+                        <property name="enabled">1</property>
+                        <property name="help"></property>
+                        <property name="id">ID_MENU_ITEM_ANALISES_EXPORTAR</property>
+                        <property name="kind">wxITEM_NORMAL</property>
+                        <property name="label">Exportar -&gt; Excel</property>
+                        <property name="name">submenu_exportar</property>
+                        <property name="permission">none</property>
+                        <property name="shortcut"></property>
+                        <property name="unchecked_bitmap"></property>
+                        <event name="OnMenuSelection">MenuElementosSelected</event>
+                    </object>
+                    <object class="wxMenuItem" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="checked">0</property>
+                        <property name="enabled">1</property>
+                        <property name="help"></property>
+                        <property name="id">ID_MENU_ITEM_EXPORTAR_PNG</property>
+                        <property name="kind">wxITEM_NORMAL</property>
+                        <property name="label">Exportar -&gt; Imagem PNG</property>
+                        <property name="name">menu_item_exportar_PNG</property>
+                        <property name="permission">none</property>
+                        <property name="shortcut"></property>
+                        <property name="unchecked_bitmap"></property>
+                        <event name="OnMenuSelection">MenuElementosSelected</event>
+                    </object>
+                    <object class="separator" expanded="0">
+                        <property name="name">m_separator1</property>
+                        <property name="permission">none</property>
+                    </object>
+                    <object class="wxMenuItem" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="checked">0</property>
+                        <property name="enabled">1</property>
+                        <property name="help"></property>
+                        <property name="id">ID_MENU_ITEM_IMPORTAR_DXF</property>
+                        <property name="kind">wxITEM_NORMAL</property>
+                        <property name="label">Importar -&gt; DXF</property>
+                        <property name="name">menu_item_importar_dxf</property>
+                        <property name="permission">none</property>
+                        <property name="shortcut"></property>
+                        <property name="unchecked_bitmap"></property>
+                        <event name="OnMenuSelection">MenuElementosSelected</event>
+                    </object>
+                </object>
+                <object class="wxMenu" expanded="0">
+                    <property name="label">Sobre</property>
+                    <property name="name">menu_sobre</property>
+                    <property name="permission">protected</property>
+                    <object class="wxMenuItem" expanded="0">
+                        <property name="bitmap"></property>
+                        <property name="checked">0</property>
+                        <property name="enabled">1</property>
+                        <property name="help"></property>
+                        <property name="id">ID_MENU_SOBRE_O_PROGRAMA</property>
+                        <property name="kind">wxITEM_NORMAL</property>
+                        <property name="label">Sobre o Programa</property>
+                        <property name="name">item_sobre_o_programa</property>
+                        <property name="permission">none</property>
+                        <property name="shortcut"></property>
+                        <property name="unchecked_bitmap"></property>
+                        <event name="OnMenuSelection">MenuElementosSelected</event>
+                    </object>
+                </object>
+            </object>
+            <object class="wxToolBar" expanded="0">
+                <property name="BottomDockable">1</property>
+                <property name="LeftDockable">1</property>
+                <property name="RightDockable">1</property>
+                <property name="TopDockable">1</property>
+                <property name="aui_layer"></property>
+                <property name="aui_name"></property>
+                <property name="aui_position"></property>
+                <property name="aui_row"></property>
+                <property name="best_size"></property>
+                <property name="bg">wxSYS_COLOUR_SCROLLBAR</property>
+                <property name="bitmapsize"></property>
+                <property name="caption"></property>
+                <property name="caption_visible">1</property>
+                <property name="center_pane">0</property>
+                <property name="close_button">1</property>
+                <property name="context_help"></property>
+                <property name="context_menu">1</property>
+                <property name="default_pane">0</property>
+                <property name="dock">Dock</property>
+                <property name="dock_fixed">0</property>
+                <property name="docking">Left</property>
+                <property name="enabled">1</property>
+                <property name="fg"></property>
+                <property name="floatable">1</property>
+                <property name="font"></property>
+                <property name="gripper">0</property>
+                <property name="hidden">0</property>
+                <property name="id">wxID_ANY</property>
+                <property name="margins"></property>
+                <property name="max_size"></property>
+                <property name="maximize_button">0</property>
+                <property name="maximum_size"></property>
+                <property name="min_size"></property>
+                <property name="minimize_button">0</property>
+                <property name="minimum_size"></property>
+                <property name="moveable">1</property>
+                <property name="name">toolbar</property>
+                <property name="packing">1</property>
+                <property name="pane_border">1</property>
+                <property name="pane_position"></property>
+                <property name="pane_size"></property>
+                <property name="permission">protected</property>
+                <property name="pin_button">1</property>
+                <property name="pos"></property>
+                <property name="resize">Resizable</property>
+                <property name="separation">5</property>
+                <property name="show">1</property>
+                <property name="size"></property>
+                <property name="style">wxTB_HORIZONTAL</property>
+                <property name="subclass"></property>
+                <property name="toolbar_pane">0</property>
+                <property name="tooltip"></property>
+                <property name="window_extra_style"></property>
+                <property name="window_name"></property>
+                <property name="window_style"></property>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">salvar</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Salva o projeto atual</property>
+                    <property name="tooltip">Salvar Projeto</property>
+                    <event name="OnToolClicked">SalvaArquivo</event>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">abrir</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Abre janela de busca de arquivo</property>
+                    <property name="tooltip">Abrir Projeto</property>
+                    <event name="OnToolClicked">Abre_Arquivo</event>
+                </object>
+                <object class="toolSeparator" expanded="0">
+                    <property name="permission">protected</property>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">gerenciaModE</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Abre janela de gerenciamento de materiais</property>
+                    <property name="tooltip">Definir Materiais</property>
+                    <event name="OnToolClicked">GerenciaMateriais</event>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">gerenciaSecoes_I</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Abre janela de gerenciamento de seções</property>
+                    <property name="tooltip">Definir Seções</property>
+                    <event name="OnToolClicked">GerenciaSecoes</event>
+                </object>
+                <object class="toolSeparator" expanded="0">
+                    <property name="permission">protected</property>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">mostraNormal</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Altera visualização da estrutura para visualização dos esforços normais nas barras</property>
+                    <property name="tooltip">Mostrar Esforços Normais</property>
+                    <event name="OnToolClicked">MostrarEsforcosNormais</event>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">mostraCortante</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Altera visualização da estrutura para visualização dos esforços cortantes nas barras</property>
+                    <property name="tooltip">Mostrar Esforços Cortantes</property>
+                    <event name="OnToolClicked">MostrarEsforcosCortantes</event>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">mostraFletor</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Altera visualização da estrutura para visualização dos esforços dos momentos fletores nas barras</property>
+                    <property name="tooltip">Mostrar Momentos Fletores</property>
+                    <event name="OnToolClicked">MostrarMomentosFletores</event>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">mostraTorcor</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Altera visualização da estrutura para visualização dos momentos torsores nas barras</property>
+                    <property name="tooltip">Mostrar Momentos Torsores</property>
+                    <event name="OnToolClicked">MostrarMomentosTorsores</event>
+                </object>
+                <object class="toolSeparator" expanded="0">
+                    <property name="permission">protected</property>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">pan</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Altera o enquadramento da tela para ser arrastado com o mouse</property>
+                    <property name="tooltip">Alterar Mouse para PAN</property>
+                    <event name="OnToolClicked">SelecionaModoPan</event>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">zoomAll</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Enquadra toda a estrutura na porção de tela visivel</property>
+                    <property name="tooltip">Dar ZoomAll</property>
+                    <event name="OnToolClicked">ZoomAll</event>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">orbit</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Altera o enquadramento da tela para girar com o arraste do mouse</property>
+                    <property name="tooltip">Alterar Mouse para Orbit</property>
+                </object>
+                <object class="toolSeparator" expanded="0">
+                    <property name="permission">protected</property>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">seta_calcular</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Faz a verificação e cálculo da estrutura em análise</property>
+                    <property name="tooltip">Calcular Estrutura</property>
+                    <event name="OnToolClicked">Calcula</event>
+                </object>
+                <object class="wxTextCtrl" expanded="0">
+                    <property name="BottomDockable">1</property>
+                    <property name="LeftDockable">1</property>
+                    <property name="RightDockable">1</property>
+                    <property name="TopDockable">1</property>
+                    <property name="aui_layer"></property>
+                    <property name="aui_name"></property>
+                    <property name="aui_position"></property>
+                    <property name="aui_row"></property>
+                    <property name="best_size"></property>
+                    <property name="bg"></property>
+                    <property name="caption"></property>
+                    <property name="caption_visible">1</property>
+                    <property name="center_pane">0</property>
+                    <property name="close_button">1</property>
+                    <property name="context_help"></property>
+                    <property name="context_menu">1</property>
+                    <property name="default_pane">0</property>
+                    <property name="dock">Dock</property>
+                    <property name="dock_fixed">0</property>
+                    <property name="docking">Left</property>
+                    <property name="enabled">1</property>
+                    <property name="fg"></property>
+                    <property name="floatable">1</property>
+                    <property name="font"></property>
+                    <property name="gripper">0</property>
+                    <property name="hidden">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="max_size"></property>
+                    <property name="maximize_button">0</property>
+                    <property name="maximum_size"></property>
+                    <property name="maxlength"></property>
+                    <property name="min_size"></property>
+                    <property name="minimize_button">0</property>
+                    <property name="minimum_size"></property>
+                    <property name="moveable">1</property>
+                    <property name="name">txt_min_coef</property>
+                    <property name="pane_border">1</property>
+                    <property name="pane_position"></property>
+                    <property name="pane_size"></property>
+                    <property name="permission">protected</property>
+                    <property name="pin_button">1</property>
+                    <property name="pos"></property>
+                    <property name="resize">Resizable</property>
+                    <property name="show">1</property>
+                    <property name="size">50,-1</property>
+                    <property name="style"></property>
+                    <property name="subclass"></property>
+                    <property name="toolbar_pane">0</property>
+                    <property name="tooltip"></property>
+                    <property name="validator_data_type"></property>
+                    <property name="validator_style">wxFILTER_NONE</property>
+                    <property name="validator_type">wxDefaultValidator</property>
+                    <property name="validator_variable"></property>
+                    <property name="value">0</property>
+                    <property name="window_extra_style"></property>
+                    <property name="window_name"></property>
+                    <property name="window_style"></property>
+                    <event name="OnKillFocus">AtualizaCoefVisualizacao</event>
+                </object>
+                <object class="wxSlider" expanded="0">
+                    <property name="BottomDockable">1</property>
+                    <property name="LeftDockable">1</property>
+                    <property name="RightDockable">1</property>
+                    <property name="TopDockable">1</property>
+                    <property name="aui_layer"></property>
+                    <property name="aui_name"></property>
+                    <property name="aui_position"></property>
+                    <property name="aui_row"></property>
+                    <property name="best_size"></property>
+                    <property name="bg"></property>
+                    <property name="caption"></property>
+                    <property name="caption_visible">1</property>
+                    <property name="center_pane">0</property>
+                    <property name="close_button">1</property>
+                    <property name="context_help"></property>
+                    <property name="context_menu">1</property>
+                    <property name="default_pane">0</property>
+                    <property name="dock">Dock</property>
+                    <property name="dock_fixed">0</property>
+                    <property name="docking">Left</property>
+                    <property name="enabled">1</property>
+                    <property name="fg"></property>
+                    <property name="floatable">1</property>
+                    <property name="font"></property>
+                    <property name="gripper">0</property>
+                    <property name="hidden">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="maxValue">1000</property>
+                    <property name="max_size"></property>
+                    <property name="maximize_button">0</property>
+                    <property name="maximum_size"></property>
+                    <property name="minValue">0</property>
+                    <property name="min_size"></property>
+                    <property name="minimize_button">0</property>
+                    <property name="minimum_size"></property>
+                    <property name="moveable">1</property>
+                    <property name="name">m_slider1</property>
+                    <property name="pane_border">1</property>
+                    <property name="pane_position"></property>
+                    <property name="pane_size"></property>
+                    <property name="permission">protected</property>
+                    <property name="pin_button">1</property>
+                    <property name="pos"></property>
+                    <property name="resize">Resizable</property>
+                    <property name="show">1</property>
+                    <property name="size"></property>
+                    <property name="style">wxSL_HORIZONTAL</property>
+                    <property name="subclass"></property>
+                    <property name="toolbar_pane">0</property>
+                    <property name="tooltip"></property>
+                    <property name="validator_data_type"></property>
+                    <property name="validator_style">wxFILTER_NONE</property>
+                    <property name="validator_type">wxDefaultValidator</property>
+                    <property name="validator_variable"></property>
+                    <property name="value">50</property>
+                    <property name="window_extra_style"></property>
+                    <property name="window_name"></property>
+                    <property name="window_style"></property>
+                    <event name="OnScroll">OnSliderBarra</event>
+                </object>
+                <object class="wxTextCtrl" expanded="0">
+                    <property name="BottomDockable">1</property>
+                    <property name="LeftDockable">1</property>
+                    <property name="RightDockable">1</property>
+                    <property name="TopDockable">1</property>
+                    <property name="aui_layer"></property>
+                    <property name="aui_name"></property>
+                    <property name="aui_position"></property>
+                    <property name="aui_row"></property>
+                    <property name="best_size"></property>
+                    <property name="bg"></property>
+                    <property name="caption"></property>
+                    <property name="caption_visible">1</property>
+                    <property name="center_pane">0</property>
+                    <property name="close_button">1</property>
+                    <property name="context_help"></property>
+                    <property name="context_menu">1</property>
+                    <property name="default_pane">0</property>
+                    <property name="dock">Dock</property>
+                    <property name="dock_fixed">0</property>
+                    <property name="docking">Left</property>
+                    <property name="enabled">1</property>
+                    <property name="fg"></property>
+                    <property name="floatable">1</property>
+                    <property name="font"></property>
+                    <property name="gripper">0</property>
+                    <property name="hidden">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="max_size"></property>
+                    <property name="maximize_button">0</property>
+                    <property name="maximum_size"></property>
+                    <property name="maxlength"></property>
+                    <property name="min_size"></property>
+                    <property name="minimize_button">0</property>
+                    <property name="minimum_size"></property>
+                    <property name="moveable">1</property>
+                    <property name="name">txt_max_coef</property>
+                    <property name="pane_border">1</property>
+                    <property name="pane_position"></property>
+                    <property name="pane_size"></property>
+                    <property name="permission">protected</property>
+                    <property name="pin_button">1</property>
+                    <property name="pos"></property>
+                    <property name="resize">Resizable</property>
+                    <property name="show">1</property>
+                    <property name="size">50,-1</property>
+                    <property name="style"></property>
+                    <property name="subclass"></property>
+                    <property name="toolbar_pane">0</property>
+                    <property name="tooltip"></property>
+                    <property name="validator_data_type"></property>
+                    <property name="validator_style">wxFILTER_NONE</property>
+                    <property name="validator_type">wxDefaultValidator</property>
+                    <property name="validator_variable"></property>
+                    <property name="value">1000</property>
+                    <property name="window_extra_style"></property>
+                    <property name="window_name"></property>
+                    <property name="window_style"></property>
+                    <event name="OnKillFocus">AtualizaCoefVisualizacao</event>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">btn_vista_esquerda</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Altera camera para visualizar a estrutura na parte esquerda</property>
+                    <property name="tooltip">Visualizar Estrutura a Esquerda</property>
+                    <event name="OnToolClicked">ViewCameraLeft</event>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">m_tool15</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Altera camera para visualizar a estrutura na parte direita</property>
+                    <property name="tooltip">Visualizar Estrutura a Direita</property>
+                    <event name="OnToolClicked">ViewCameraRight</event>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">m_tool16</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Altera camera para visualizar a estrutura na parte da frente</property>
+                    <property name="tooltip">Visualizar Estrutura de Frente</property>
+                    <event name="OnToolClicked">ViewCameraFront</event>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">m_tool17</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Altera camera para visualizar a estrutura na parte de trás</property>
+                    <property name="tooltip">Visualizar Estrutura de Trás</property>
+                    <event name="OnToolClicked">ViewCameraBack</event>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">m_tool18</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Altera camera para visualizar a estrutura na parte de cima</property>
+                    <property name="tooltip">Visualizar de cima</property>
+                    <event name="OnToolClicked">ViewCameraTop</event>
+                </object>
+                <object class="tool" expanded="0">
+                    <property name="bitmap">Load From Art Provider; wxART_GO_HOME; wxART_TOOLBAR</property>
+                    <property name="context_menu">0</property>
+                    <property name="id">wxID_ANY</property>
+                    <property name="kind">wxITEM_NORMAL</property>
+                    <property name="label">tool</property>
+                    <property name="name">m_tool19</property>
+                    <property name="permission">protected</property>
+                    <property name="statusbar">Altera camera para visualizar a estrutura na parte de baixo</property>
+                    <property name="tooltip">visualizar de baixo</property>
+                    <event name="OnToolClicked">ViewCameraBottom</event>
+                </object>
+            </object>
+        </object>
+    </object>
+</wxFormBuilder_Project>
